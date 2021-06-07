@@ -1,10 +1,10 @@
 for(var i=9;i<18;i++){
     if(i <= 12){
-    let newDiv ="<div class='row'><div class='col-1 border-top border-bottom border-dark'>" + (i) + "</div><div class='col-10 timeblock"+i+"'></div></div></div><div class='col-1 bg-success'></div></div>"
+    let newDiv ="<div class='row'><div class='col-1 border-top border-bottom border-dark'>" + (i) + "</div><div class='col-10 timeblock"+i+"' ><textarea class='form-control  border-0 outline-0 timeblock"+i+"' rows='2'></textarea></div><div class='col-1 bg-success'></div></div>"
     $(".scheduler").append(newDiv)
     }
     else{
-        let newDiv ="<div class='row'><div class='col-1 border-top border-bottom border-dark'>" + (i -12) + "</div><div class='col-10 timeblock"+i+"'></div><div class='col-1 bg-success'></div></div>"
+        let newDiv ="<div class='row'><div class='col-1 border-top border-bottom border-dark'>" + (i -12) + "</div><div class='col-10 timeblock"+i+"'><textarea class='form-control  border-0 timeblock"+i+"' rows='2'></textarea></div><div class='col-1 bg-success'></div></div>"
     $(".scheduler").append(newDiv)
     }
     let currentHour = moment().format("k")
@@ -18,11 +18,7 @@ for(var i=9;i<18;i++){
         $(".timeblock"+i+"").css("background-color", " #c9c9c9");
     }
 }
-for(var i=9; i< 18; i++){
-    $(".timeblock"+i).click(()=>{
-        console.log(i)
-    })
-}
+
 
 let today = moment().format("dddd MMMM Do")
 $("#currentDay").text(today);
